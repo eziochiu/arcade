@@ -59,6 +59,7 @@
 #define MUIOPTION_SORT_COLUMN					"sort_column"
 #define MUIOPTION_SORT_REVERSED					"sort_reversed"
 #define MUIOPTION_FLYER_DIRECTORY				"flyer_directory"
+#define MUIOPTION_IPS_DIRECTORY					"ips_directory"
 #define MUIOPTION_CABINET_DIRECTORY				"cabinet_directory"
 #define MUIOPTION_MARQUEE_DIRECTORY				"marquee_directory"
 #define MUIOPTION_TITLE_DIRECTORY				"title_directory"
@@ -353,6 +354,8 @@ const char* GetArtDir(void);
 void SetArtDir(const char* path);
 const char* GetFlyerDir(void);
 void SetFlyerDir(const char* path);
+const char* GetIpsDir(void);
+void SetIpsDir(const char* path);
 const char* GetCabinetDir(void);
 void SetCabinetDir(const char* path);
 const char* GetMarqueeDir(void);

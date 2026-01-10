@@ -53,6 +53,8 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_PLUGINSPATH,                                "plugins",   core_options::option_type::MULTIPATH,  "path to plugin files" },
 	{ OPTION_LANGUAGEPATH,                               "language",  core_options::option_type::MULTIPATH,  "path to UI translation files" },
 	{ OPTION_SWPATH,                                     "software",  core_options::option_type::MULTIPATH,  "path to loose software" },
+	{ OPTION_IPSPATH,                                    "ips",       core_options::option_type::MULTIPATH,  "path to IPS patch files" },
+	{ OPTION_IPS,                                        nullptr,     core_options::option_type::STRING,     "IPS patch name" },
 
 	// output directory options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE OUTPUT DIRECTORY OPTIONS" },

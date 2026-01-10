@@ -48,6 +48,8 @@
 #define IDI_KEYBOARD                    161
 #define IDI_JOYSTICK                    162
 #define IDI_DISPLAY                     163
+#define IDD_PROP_IPS                    164
+#define IDD_IPS_DIALOG                  300
 #define IDC_CURSOR_HSPLIT               165
 #define IDB_TOOLBAR                     166
 #define IDR_CONTEXT_TREE                168
@@ -162,8 +164,16 @@
 #define IDI_MISC2SHEET                  282
 #define IDI_SNAPSHEET                   283
 #define IDI_SHADER                      284
+#define IDB_MAME_IPS                    285
 #define IDC_LIST                        1000
-#define IDC_JOYSTICK                    1003
+#define IDC_IPS_LIST                    1001
+#define IDC_IPS_DESC                    1002
+#define IDC_IPS_TREE                    1003
+#define IDC_IPS_SNAP                    1004
+#define IDC_IPS_LANG                    1005
+#define IDC_IPS_RELATION                1006
+#define IDC_IPS_CLEAR                   1007
+#define IDC_JOYSTICK                    1008
 #define IDC_SIZES                       1005
 #define IDC_FRAMESKIP                   1009
 #define IDC_ROTATE                      1010
@@ -475,6 +485,7 @@
 #define ID_ABOUT                        40003
 #define ID_FILE_PLAY                    40004
 #define ID_HELP_ABOUT                   40006
+#define ID_PLAY_IPS                     40008
 #define ID_VIEW_ICONS_LARGE             40009
 #define ID_VIEW_ICONS_SMALL             40010
 #define ID_OPTIONS_FONT                 40012

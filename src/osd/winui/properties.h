@@ -23,4 +23,7 @@
 void InitPropertyPage(HINSTANCE hInst, HWND hWnd, OPTIONS_TYPE opt_type, int folder_id, int game_num);
 intptr_t CALLBACK GamePropertiesDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+/* Called to show the standalone IPS dialog */
+void ShowIPSDialog(HINSTANCE hInst, HWND hWnd, int game_num);
+
 #endif

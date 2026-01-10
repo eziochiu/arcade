@@ -38,6 +38,8 @@
 #define OPTION_PLUGINSPATH          "pluginspath"
 #define OPTION_LANGUAGEPATH         "languagepath"
 #define OPTION_SWPATH               "swpath"
+#define OPTION_IPSPATH              "ipspath"
+#define OPTION_IPS                  "ips"
 
 // core directory options
 #define OPTION_CFG_DIRECTORY        "cfg_directory"

@@ -7,6 +7,7 @@
 //============================================================
 
 #include "winopts.h"
+#include "emuopts.h"  // for OPTION_IPS
 
 
 namespace {
@@ -129,6 +130,10 @@ options_entry const f_win_option_entries[] =
 	// input options
 	{ nullptr,                                        nullptr,    core_options::option_type::HEADER,     "INPUT DEVICE OPTIONS" },
 	{ WINOPTION_DUAL_LIGHTGUN ";dual",                "0",        core_options::option_type::BOOLEAN,    "enable dual lightgun input" },
+
+	// IPS options
+	{ nullptr,                                        nullptr,    core_options::option_type::HEADER,     "IPS PATCH OPTIONS" },
+	{ OPTION_IPS,                                     nullptr,    core_options::option_type::STRING,     "comma-separated list of IPS patches to apply" },
 
 	{ nullptr }
 };
