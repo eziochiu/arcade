@@ -558,6 +558,12 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 				SetWindowText(hDlg, wtitle);
 				free(wtitle);
 			}
+
+			{
+				int savedLang = GetIPSLang();
+				if (savedLang < 0 || savedLang > 2) savedLang = 0;
+				SetIPSLangOverride(savedLang);
+			}
 			
 			HWND hTree = GetDlgItem(hDlg, IDC_IPS_TREE);
 			if (hTree)
@@ -645,7 +651,6 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 				int savedLang = GetIPSLang();
 				if (savedLang < 0 || savedLang > 2) savedLang = 0;
 				ComboBox_SetCurSel(hLang, savedLang);
-				SetIPSLangOverride(savedLang);
 			}
 			
 			HWND hRelation = GetDlgItem(hDlg, IDC_IPS_RELATION);
