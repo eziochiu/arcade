@@ -1139,12 +1139,26 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 					HWND hTree = GetDlgItem(hDlg, IDC_IPS_TREE);
 					if (hTree)
 					{
+						int nParentIndex = -1;
+						if (DriverIsClone(g_nGame))
+							nParentIndex = GetParentIndex(&driver_list::driver(g_nGame));
+						
 						std::function<void(HTREEITEM)> clear_all_checkboxes;
 						clear_all_checkboxes = [&](HTREEITEM hRoot) {
 							HTREEITEM hItem = hRoot;
 							while (hItem)
 							{
 								TreeView_SetCheckState(hTree, hItem, FALSE);
+								
+								TVITEM tvi;
+								tvi.mask = TVIF_PARAM;
+								tvi.hItem = hItem;
+								if (TreeView_GetItem(hTree, &tvi) && tvi.lParam >= 0)
+								{
+									const char* filename = GetPatchFilename(g_nGame, nParentIndex, (int)tvi.lParam);
+									if (filename)
+										IPSSetPatchState(filename, false);
+								}
 								
 								HTREEITEM hChild = TreeView_GetChild(hTree, hItem);
 								if (hChild)
