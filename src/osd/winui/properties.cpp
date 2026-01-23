@@ -1013,6 +1013,9 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 						{
 							SetIPSLangOverride(idx);
 							
+							SetIPSLang(idx);
+							SaveInterface();
+							
 							HWND hTree = GetDlgItem(hDlg, IDC_IPS_TREE);
 							if (hTree)
 							{
