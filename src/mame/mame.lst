@@ -1529,6 +1529,7 @@ foxyruby
 gostopac
 hacher
 hapfarm
+hapfarm_in0101a
 hapfarm_in0102b
 keno21
 luckycoin
@@ -1778,6 +1779,7 @@ marble3
 marble4
 marble5
 peterpak
+reliefs1
 roadblst
 roadblst1
 roadblst2
@@ -3282,6 +3284,7 @@ m4blsbys__z
 m4bluesn
 m4cfinln
 m4cfinln__a
+m4cfinln__b
 m4cpfinl
 m4cpfinl__a
 m4cpfinl__b
@@ -4131,6 +4134,7 @@ m4wwcb
 @source:barcrest/mpu4mod2sw.cpp
 m421
 m421club
+m421clubg
 m4actbnka
 m4actbnkb
 m4actclb
@@ -5170,6 +5174,7 @@ m4chaseid
 m4chaseie
 m4chaseig
 m4cjdlx
+m4cjdlxb
 m4clbveg
 m4clbvega
 m4clbvegb
@@ -7078,6 +7083,7 @@ m4rockmn__i
 m4rockmn__j
 m4rockmn__k
 m4royjwl
+m4rrun
 m4rwb
 m4salsa
 m4sctagt
@@ -16327,6 +16333,10 @@ cz101
 cz230s
 sz1
 
+@source:casio/dg20.cpp
+dg10
+dg20
+
 @source:casio/fp200.cpp
 fp200
 
@@ -18221,6 +18231,7 @@ lastbank
 lpierrot
 mir7hg
 mir7hgt
+sparkle
 ukiyobox
 wcircus
 
@@ -19334,9 +19345,11 @@ rockclim
 @source:galaxian/galaxold.cpp
 4in1
 bullsdrtg
+devilfshv
+dingov
+dkingjrv
 dkongjrm
 dkongjrmc
-dkongjrv
 drivfrcb
 drivfrcg
 drivfrcsg
@@ -19349,6 +19362,7 @@ hexpoola
 hunchbgb
 hunchbkg
 hustlerb3
+junglekv
 racknrol
 scrabbleo
 scramb2
@@ -21442,6 +21456,7 @@ spk200ua
 spk201ua
 spk203us
 spk205us
+spk305us
 spk306us
 xjinhuang
 zuanshiw
@@ -24624,6 +24639,7 @@ puzzloopa
 puzzloope
 puzzloopj
 puzzloopk
+puzzloopkbl
 puzzloopu
 ryouran
 ryourano
@@ -27010,6 +27026,7 @@ m1ppc
 m1ppca
 m1ppcb
 m1ppdt
+m1ppdta
 m1przclu
 m1przclua
 m1przclub
@@ -28157,6 +28174,7 @@ rivierad
 rivierae
 tictac
 tictaca
+tictacb
 tictacuk
 tictacv
 trvwz
@@ -28811,6 +28829,7 @@ wwfmaniap
 
 @source:midway/midxunit.cpp
 revx
+revx1
 revxp5
 
 @source:midway/midyunit.cpp
@@ -29099,8 +29118,17 @@ pokrwild
 rodent
 
 @source:misc/3do.cpp
-3do
-3do_pal
+3do_fc1
+3do_fc2
+3do_fz1
+3do_fz1e
+3do_fz1j
+3do_fz10
+3do_fz10e
+3do_fz10j
+3do_gdo101
+3do_hc21
+3do_try
 3dobios
 alg3do
 md23do
@@ -37323,6 +37351,9 @@ toptek286
 tot3200sxc
 tower386sx
 towerat2xx
+ts30a
+ts30as
+ts30at
 ts34t25
 twinnet
 u3911v3
@@ -43208,10 +43239,8 @@ indigo
 indigo_r4000
 indigo_r4400
 
-@source:sgi/iris1400.cpp
+@source:sgi/iris.cpp
 iris1400
-
-@source:sgi/iris3130.cpp
 iris3130
 
 @source:sgi/iris_power.cpp
@@ -43676,6 +43705,7 @@ ckz80
 @source:skeleton/cle68k.cpp
 dmndhrt
 dmndhrtn
+dmndhrtp
 honeybee
 
 @source:skeleton/clownmgc.cpp
@@ -43990,6 +44020,10 @@ dbzscout
 
 @source:skeleton/kron.cpp
 kron180
+
+
+@source:skeleton/lanmao.cpp
+lanmao
 
 @source:skeleton/leadsinger2.cpp
 leadsng2
@@ -44609,6 +44643,7 @@ satansat
 satansata
 satansatind
 vanguard
+vanguarda
 vanguardc
 vanguardg
 vanguardj

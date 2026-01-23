@@ -985,6 +985,7 @@ gaelco/splash.cpp
 gaelco/splash_ms.cpp          // adult
 
 gaelco/targeth.cpp
+-quickshts
 
 gaelco/thoop2.cpp
 
@@ -1020,7 +1021,6 @@ galaxian/galaxian.cpp
 galaxian/galaxian_rockclim.cpp
 
 galaxian/galaxold.cpp
--dkongjrv
 -drivfrcsga
 -spcwarp
 -trvchlng
@@ -1087,8 +1087,8 @@ igs/goldstar.cpp          // fruit
 -bonusch
 -bonuscha
 -cb3f
--cb3i                     // need roms
--cb3j                     // need roms
+-cb3i
+-cb3j
 -chryangl
 -chryangla
 -chryanglb
@@ -1431,6 +1431,7 @@ kaneko/sandscrp.cpp
 kaneko/snowbros.cpp
 
 kaneko/suprnova.cpp
+-puzzloopkbl
 
 kiwako/jongkyo.cpp          // bad colours, mahjong
 
@@ -4019,6 +4020,8 @@ sigma/spiders.cpp
 
 //skeleton/kkcount.cpp            // no screen
 
+//skeleton/lanmao.cpp             // no screen
+
 //skeleton/lgtz80.cpp             // black screen
 
 //skeleton/madmoney2.cpp          // no screen
@@ -4300,7 +4303,6 @@ taito/sbmjb.cpp
 -bubbroul17
 -harikiri
 -honooinv
--packyts                     //need roms
 -rendfgtr
 
 taito/sbowling.cpp
