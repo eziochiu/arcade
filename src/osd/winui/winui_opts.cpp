@@ -136,6 +136,7 @@ const options_entry winui_options::s_option_entries[] =
 	{ MUIOPTION_UI_JOY_SS_CHANGE,			"2,0,3,0",  core_options::option_type::STRING, nullptr },
 	{ MUIOPTION_UI_JOY_HISTORY_UP,			"2,0,4,0",  core_options::option_type::STRING, nullptr },
 	{ MUIOPTION_UI_JOY_HISTORY_DOWN,		"2,0,1,0",  core_options::option_type::STRING, nullptr },
+	{ MUIOPTION_IPS_LANG,						"0",	core_options::option_type::INTEGER, nullptr },
 	{ nullptr }
 };
 
@@ -458,6 +459,16 @@ void SetShowFolderList(bool val)
 bool GetShowFolderList(void)
 {
 	return winui_opts.bool_value(MUIOPTION_SHOW_FOLDER_SECTION);
+}
+
+void SetIPSLang(int val)
+{
+	winui_opts.set_value(MUIOPTION_IPS_LANG, val, OPTION_PRIORITY_CMDLINE);
+}
+
+int GetIPSLang(void)
+{
+	return winui_opts.int_value(MUIOPTION_IPS_LANG);
 }
 
 static void GetsShowFolderFlags(LPBITS bits)

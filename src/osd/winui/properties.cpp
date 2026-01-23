@@ -641,6 +641,11 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 				ComboBox_AddString(hLang, L"繁體中文");
 				ComboBox_AddString(hLang, L"English");
 				ComboBox_SetCurSel(hLang, 0);
+
+				int savedLang = GetIPSLang();
+				if (savedLang < 0 || savedLang > 2) savedLang = 0;
+				ComboBox_SetCurSel(hLang, savedLang);
+				SetIPSLangOverride(savedLang);
 			}
 			
 			HWND hRelation = GetDlgItem(hDlg, IDC_IPS_RELATION);
@@ -1134,12 +1139,22 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 					HWND hTree = GetDlgItem(hDlg, IDC_IPS_TREE);
 					if (hTree)
 					{
-						HTREEITEM hItem = TreeView_GetRoot(hTree);
-						while (hItem)
-						{
-							TreeView_SetCheckState(hTree, hItem, FALSE);
-							hItem = TreeView_GetNextSibling(hTree, hItem);
-						}
+						std::function<void(HTREEITEM)> clear_all_checkboxes;
+						clear_all_checkboxes = [&](HTREEITEM hRoot) {
+							HTREEITEM hItem = hRoot;
+							while (hItem)
+							{
+								TreeView_SetCheckState(hTree, hItem, FALSE);
+								
+								HTREEITEM hChild = TreeView_GetChild(hTree, hItem);
+								if (hChild)
+									clear_all_checkboxes(hChild);
+								
+								hItem = TreeView_GetNextSibling(hTree, hItem);
+							}
+						};
+						
+						clear_all_checkboxes(TreeView_GetRoot(hTree));
 					}
 					HWND hList = GetDlgItem(hDlg, IDC_IPS_LIST);
 					if (hList)

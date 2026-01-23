@@ -99,6 +99,7 @@
 #define DEFAULT_INI_FILENAME 					"mame"
 #define INTERNAL_UI_INI_FILENAME 				"ui"
 #define PLUGINS_INI_FILENAME 					"plugin"
+#define MUIOPTION_IPS_LANG						"ips_lang"
 
 // Because we have added the Options after MAX_TAB_TYPES, we have to subtract 2 here
 // (that's how many options we have after MAX_TAB_TYPES)
@@ -455,5 +456,7 @@ uint32_t GetDriverCacheLower(int driver_index);
 uint32_t GetDriverCacheUpper(int driver_index);
 void SetDriverCache(int driver_index, uint32_t val);
 BOOL RequiredDriverCache(void);
+int GetIPSLang(void);
+void SetIPSLang(int val);
 
 #endif
