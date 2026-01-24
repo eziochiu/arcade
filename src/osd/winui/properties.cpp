@@ -580,7 +580,7 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 				for (int i = 0; i < count; i++)
 				{
 					const char* filename = GetPatchFilename(g_nGame, nParentIndex, i);
-					const char* desc = GetPatchDesc(g_nGame, nParentIndex, i);
+					const char* title = GetPatchTitle(g_nGame, nParentIndex, i);
 					const char* category = GetPatchCategory(g_nGame, nParentIndex, i);
 					
 					if (filename)
@@ -612,8 +612,8 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 								hParent = it->second;
 							}
 						}
-
-						wchar_t* wfilename = win_wstring_from_utf8(desc ? desc : filename);
+						
+						wchar_t* wfilename = win_wstring_from_utf8(title ? title : filename);						
 						if (wfilename)
 						{
 							TVINSERTSTRUCT tvis;
@@ -790,6 +790,7 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 							wchar_t *wdesc = win_wstring_from_utf8(desc);
 							if (wdesc)
 							{
+								SendMessage(hDesc, EM_LIMITTEXT, 0, 0);
 								SetWindowText(hDesc, wdesc);
 								free(wdesc);
 							}
@@ -1036,7 +1037,7 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 								for (int i = 0; i < count; i++)
 								{
 									const char* filename = GetPatchFilename(g_nGame, nParentIndex, i);
-									const char* desc = GetPatchDesc(g_nGame, nParentIndex, i);
+									const char* title = GetPatchTitle(g_nGame, nParentIndex, i);
 									const char* category = GetPatchCategory(g_nGame, nParentIndex, i);
 									
 									if (filename)
@@ -1071,7 +1072,7 @@ static intptr_t CALLBACK IPSDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPAR
 											}
 										}
 
-										wchar_t* wfilename = win_wstring_from_utf8(desc ? desc : filename);
+										wchar_t* wfilename = win_wstring_from_utf8(title ? title : filename);
 										if (wfilename)
 										{
 											TVINSERTSTRUCT tvis;
