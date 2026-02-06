@@ -303,6 +303,8 @@ atlus/ohmygod.cpp
 
 atlus/patapata.cpp
 
+//atlus/pitchtry.cpp           // no screen
+
 //atlus/rallypnt.cpp          // no screen
 
 //barcrest/mpu1.cpp          // fruit, mech
@@ -736,7 +738,8 @@ eolith/eolith.cpp
 eolith/eolith16.cpp
 
 eolith/ghosteo.cpp
--touryuu                        // inputs
+-touryuu                        // foreign error
+-touryuua                       // foreign error
 
 eolith/vegaeo.cpp
 
@@ -1052,6 +1055,9 @@ gottlieb/gottlieb.cpp
 
 //hominn/hominn_mcs51.cpp           // black screen
 
+ice/calchase.cpp            // calchase: BOOT to start game
+-hostinv
+
 //ice/chexx.cpp          // mechanical, no inputs
 
 //ice/fcourtfev.cpp             // no screen
@@ -1067,6 +1073,8 @@ gottlieb/gottlieb.cpp
 ice/lethalj.cpp
 
 //ice/schexx4gen.cpp          // no screen
+
+ice/skimaxx.cpp
 
 //ice/vp101.cpp          // not working
 
@@ -1185,6 +1193,7 @@ igs/igs_m027.cpp
 -amazonia
 -amazonkp
 -cjddz213cn
+-cjddzp206cn
 -cjdh6th
 -cjdh6tha
 -extradrw
@@ -1931,6 +1940,7 @@ misc/39in1.cpp
 //misc/4enlinea.cpp          // mnw, hang at start
 
 misc/4enraya.cpp
+-spadarts                   // need roms
 -strker
 
 //misc/a1supply.cpp          // no screen
@@ -2512,8 +2522,6 @@ misc/shangkid.cpp
 
 //misc/skeetsht.cpp          // mnw
 
-misc/skimaxx.cpp
-
 misc/skyarmy.cpp
 
 misc/sliver.cpp          // adult
@@ -2790,6 +2798,8 @@ namco/namcos23.cpp
 -rapidrvrp
 -rapidrvrv2c
 
+//namco/namcos6.cpp             // need roms
+
 namco/namcos86.cpp
 
 namco/pacland.cpp
@@ -2953,6 +2963,7 @@ nintendo/vsnes.cpp
 
 nintendo/vt1682.cpp
 -anpncpc                   // no inputs
+-anpnvt12                  // foreign error
 -gm235upc
 
 nix/fitfight.cpp
@@ -3032,9 +3043,6 @@ pacman/pengo.cpp
 
 pacman/schick.cpp
 
-pc/calchase.cpp            // calchase: BOOT to start game
--hostinv
-
 //pc/champ2.cpp            // hang on boot screen
 
 //pc/cuttherope.cpp        // skel,chd, assume no screen
@@ -3048,6 +3056,8 @@ pc/filetto.cpp
 //pc/igspc.cpp             // chd, mnw
 
 //pc/conliner.cpp          // no screen
+
+//pc/mdartstr.cpp          // no screen
 
 //pc/pangofun.cpp          // missing floppy
 
@@ -3069,6 +3079,8 @@ pc/pcat_nit.cpp            // use -mouse
 //pc/quakeat.cpp          // black screen
 
 //pc/queen.cpp            // black screen
+
+//pc/seawolfnm.cpp         // no screen
 
 //pc/sis630.cpp           // chd, mnw
 
