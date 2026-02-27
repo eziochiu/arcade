@@ -6,7 +6,7 @@
 #
 ###########################################################################
 
-BARE_VERS := 0.285
+BARE_VERS := 0.286
 LONG_VERS := $(BARE_VERS).x
 
 ###########################################################################
@@ -566,15 +566,6 @@ endif
 # enable symbols as it is useless without them
 ifdef SANITIZE
 SYMBOLS = 1
-endif
-
-# profiler defaults to on for DEBUG builds
-ifdef DEBUG
-ifneq '$(DEBUG)' '0'
-ifndef PROFILER
-PROFILER = 1
-endif
-endif
 endif
 
 # allow gprof profiling as well, which overrides the internal PROFILER
@@ -1581,11 +1572,11 @@ endif
 # Regression tests
 #-------------------------------------------------
 
-include regtests/regtests.mak
+#include regtests/regtests.mak
 
-.PHONY: tests
+#.PHONY: tests
 
-tests: $(REGTESTS)
+#tests: $(REGTESTS)
 
 #-------------------------------------------------
 # Source cleanup

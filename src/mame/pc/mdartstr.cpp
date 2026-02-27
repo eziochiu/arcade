@@ -16,8 +16,6 @@ TODO:
 - Needs optional printer and FDC options (cfr. service mode "File");
 - Sensor test (for out of board darts?), seems tied to an irq or NMI;
 - "Dart Star" title GFX can glitch out if coin is inserted at wrong time (verify);
-- Emulate 65535 (S)VGA, same as IBM PC-110
-  ETA: looks a very limited use of it, uses a mix of standard VGA modes;
 
 ===================================================================================================
 
@@ -127,12 +125,14 @@ void isa16_medalist_rom_disk::device_add_mconfig(machine_config &config)
 	SPEAKER(config, "mono").front_center();
 
 	IDT7202(config, m_fifo);
+#if 0
 	// TODO: one byte off (speaker pops), may disconnect timer on FIFO empty?
-	//m_fifo->ef_handler().set([this] (int state) {
-	//	printf("%d\n", state);
-	//	if (state)
-	//		m_dac_timer->adjust(attotime::from_hz(11'025));
-	//});
+	m_fifo->ef_handler().set([this] (int state) {
+		printf("%d\n", state);
+		if (state)
+			m_dac_timer->adjust(attotime::from_hz(11'025));
+	});
+#endif
 
 	AD7224(config, "dac", 0).add_route(ALL_OUTPUTS, "mono", 0.50);
 }
@@ -212,7 +212,7 @@ TIMER_CALLBACK_MEMBER(isa16_medalist_rom_disk::dac_cb)
 
 	const u8 data = m_fifo->data_byte_r();
 
-//	printf("%02x %d\n", data, m_fifo->ef_r());
+//  printf("%02x %d\n", data, m_fifo->ef_r());
 
 	m_dac->data_w(data);
 }
@@ -678,7 +678,7 @@ void mdartstr_state::mdartstr(machine_config &config)
 	keybc.hot_res().set(m_chipset, FUNC(f82c836a_device::kbrst_w));
 	// looks unconnected, the BIOS will just use fast A20 exclusively for driving the line
 	keybc.gate_a20().set_nop();
-//	keybc.gate_a20().set(m_chipset, FUNC(f82c836a_device::gatea20_w));
+//  keybc.gate_a20().set(m_chipset, FUNC(f82c836a_device::gatea20_w));
 	keybc.kbd_irq().set(m_chipset, FUNC(f82c836a_device::irq01_w));
 	keybc.kbd_clk().set("kbd", FUNC(pc_kbdc_device::clock_write_from_mb));
 	keybc.kbd_data().set("kbd", FUNC(pc_kbdc_device::data_write_from_mb));

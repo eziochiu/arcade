@@ -15,11 +15,11 @@
 #include "machine/ram.h"
 
 class f82c836a_device : public device_t,
-					    public device_memory_interface
+						public device_memory_interface
 {
 public:
 	template <typename T, typename U, typename V, typename W, typename X>
-	f82c836a_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, T &&cputag, U &&biostag, V &&keybctag, W &&ramtag, X &&isatag)
+	f82c836a_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock, T &&cputag, U &&biostag, V &&keybctag, W &&ramtag, X &&isatag)
 		: f82c836a_device(mconfig, tag, owner, clock)
 	{
 		set_cputag(std::forward<T>(cputag));
@@ -98,13 +98,13 @@ public:
 	}
 	void gatea20_w(int state) { keyboard_gatea20(state); }
 	void kbrst_w(int state) {
-		// convert to active low signal (gets inverted in at_keybc.c)
+		// convert to active low signal (gets inverted in at_keybc.cpp)
 		state = (state == ASSERT_LINE ? 0 : 1);
 
 		// external kbreset is ignored when emulation enabled
 		//if (!BIT(m_registers[SOFT_RESET_AND_GATEA20], 4))
 		//{
-		//	// detect transition
+		//  // detect transition
 		if (m_kbrst == 1 && state == 0)
 		{
 			m_write_cpureset(1);
@@ -170,9 +170,9 @@ private:
 	int m_kbrst;
 	int m_ext_gatea20;
 	int m_fast_gatea20;
-//	int m_emu_gatea20;
-//	bool m_keybc_d1_written;
-//	bool m_keybc_data_blocked;
+//  int m_emu_gatea20;
+//  bool m_keybc_d1_written;
+//  bool m_keybc_data_blocked;
 
 	u8 portb_r();
 	void portb_w(u8 data);
@@ -204,9 +204,9 @@ private:
 	u8 dma1_ior1_r() { return m_read_ior(1); }
 	u8 dma1_ior2_r() { return m_read_ior(2); }
 	u8 dma1_ior3_r() { return m_read_ior(3); }
-	u8 dma2_ior1_r() { uint16_t const result = m_read_ior(5); m_dma_high_byte = result >> 8; return result; }
-	u8 dma2_ior2_r() { uint16_t const result = m_read_ior(6); m_dma_high_byte = result >> 8; return result; }
-	u8 dma2_ior3_r() { uint16_t const result = m_read_ior(7); m_dma_high_byte = result >> 8; return result; }
+	u8 dma2_ior1_r() { u16 const result = m_read_ior(5); m_dma_high_byte = result >> 8; return result; }
+	u8 dma2_ior2_r() { u16 const result = m_read_ior(6); m_dma_high_byte = result >> 8; return result; }
+	u8 dma2_ior3_r() { u16 const result = m_read_ior(7); m_dma_high_byte = result >> 8; return result; }
 	void dma1_iow0_w(u8 data) { m_write_iow(0, data, 0xffff); }
 	void dma1_iow1_w(u8 data) { m_write_iow(1, data, 0xffff); }
 	void dma1_iow2_w(u8 data) { m_write_iow(2, data, 0xffff); }
@@ -233,8 +233,8 @@ private:
 		}
 	}
 
-//	void emulated_kbreset(int state);
-//	void emulated_gatea20(int state);
+//  void emulated_kbreset(int state);
+//  void emulated_gatea20(int state);
 };
 
 DECLARE_DEVICE_TYPE(F82C836A, f82c836a_device)
