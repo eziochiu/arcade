@@ -385,8 +385,8 @@ bool machine_static_info::has_severe_warnings() const noexcept
 			m_severe_media_warnings ||
 			(machine_flags() & MACHINE_ERRORS) ||
 			(emulation_flags() & DEVICE_ERRORS) ||
-			(unemulated_features() & (device_t::feature::PROTECTION | device_t::feature::GRAPHICS | device_t::feature::SOUND)) ||
-			(imperfect_features() & device_t::feature::PROTECTION);
+			(unemulated_features() & (device_t::feature::GRAPHICS | device_t::feature::SOUND))// ||
+			;//(imperfect_features() & device_t::feature::PROTECTION);
 }
 
 
@@ -509,7 +509,7 @@ std::string machine_info::game_info_string() const
 		util::stream_format(buf,
 				(count > 1)
 					? ((clock != 0) ? u8"%1$d×%2$s %3$s\u00a0%4$s\n" : u8"%1$d×%2$s\n")
-					: ((clock != 0) ? u8"%2$s %3$s\u00a0%4$s\n" : "%2$s\n"),
+					: ((clock != 0) ? u8"%2$s %3$s\u00a0%4$s\n" : u8"%2$s\n"),
 				count, name, hz,
 				(d == 9) ? _("GHz") : (d == 6) ? _("MHz") : (d == 3) ? _("kHz") : _("Hz"));
 	}
@@ -565,7 +565,7 @@ std::string machine_info::game_info_string() const
 		util::stream_format(buf,
 				(count > 1)
 					? ((clock != 0) ? u8"%1$d×%2$s %3$s\u00a0%4$s" : u8"%1$d×%2$s")
-					: ((clock != 0) ? u8"%2$s %3$s\u00a0%4$s" : "%2$s"),
+					: ((clock != 0) ? u8"%2$s %3$s\u00a0%4$s" : u8"%2$s"),
 				count, sound.device().name(), hz,
 				(d == 9) ? _("GHz") : (d == 6) ? _("MHz") : (d == 3) ? _("kHz") : _("Hz"));
 
